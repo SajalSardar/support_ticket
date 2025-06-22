@@ -1,0 +1,1 @@
+<x-app-layout>demo page</x-app-layout>

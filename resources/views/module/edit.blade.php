@@ -1,0 +1,1 @@
+<x-app-layout><livewire:module.update-module /></x-app-layout>

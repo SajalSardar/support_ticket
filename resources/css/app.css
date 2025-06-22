@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-heading-light {
+    @apply text-sm font-inter text-[#fff];
+}
+
+.text-heading-dark {
+    @apply text-sm !font-medium font-inter text-[#27313b];
+}
+
+.text-title {
+    @apply text-sm font-inter text-[#27313b];
+}
+
+.text-paragraph {
+    @apply text-sm font-inter text-[#5e666e];
+}
+
+.text-caption {
+    @apply text-xs font-inter text-[#5e666e];
+}
+
+.text-detail-heading {
+    @apply text-base font-medium font-inter text-[#27313b];
+}
+
+.text-active-breadcrumb {
+    @apply text-xl font-medium font-inter text-[#27313b];
+}

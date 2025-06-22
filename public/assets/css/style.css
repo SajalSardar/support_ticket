@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+li,
+div,
+span {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+}
+
+::backdrop {
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+}
+
+/* Scrollbar Design Start */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ddd;
+    /* border-radius: 8px; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ddd;
+}
+
+/* Scrollbar Design End */
+
+.transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.-translate-x-full {
+    --tw-translate-x: -100%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+        rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+        scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@media (min-width: 768px) {
+    .md\:hidden {
+        display: none;
+    }
+
+    .main.active {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+/* navbar css */
+.navbar {
+    padding: 15px 0;
+    background: #fff;
+    left: 0;
+    top: 0;
+}
+
+.navbar-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+.hamberger {
+    margin-left: 35px;
+    display: flex;
+    align-items: center;
+}
+
+/* .hamberger{
+    padding-right:68px !important ;
+} */
+
+svg {
+    pointer-events: none;
+}
+
+/* media query */
+@media screen and (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+
+    .navbar {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .user-type {
+        width: 15%;
+        padding: 0 5px;
+    }
+
+    .user-type-select {
+        padding: 10px 2px;
+    }
+
+    .lang {
+        width: 15%;
+        padding: 5px;
+    }
+
+    .lang img {
+        display: none;
+    }
+
+    .lang select {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .navbar {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .search-input {
+        width: 30%;
+        padding: 0;
+    }
+
+    .search-input input {
+        padding: 10px;
+    }
+
+    .user-type {
+        width: 15%;
+        padding: 0 5px;
+    }
+
+    .user-type-select {
+        padding: 10px 2px;
+    }
+
+    .lang {
+        width: 15%;
+        padding: 5px;
+    }
+
+    .lang img {
+        display: none;
+    }
+
+    .lang select {
+        width: 100%;
+        padding: 0;
+    }
+
+    .notification {
+        width: 15%;
+        padding: 0 10px;
+    }
+
+    .profile {
+        width: 15%;
+    }
+
+    .profile img {
+        width: 60%;
+    }
+
+    .arrow {
+        display: none;
+    }
+}
+
+.nice-select .option.selected {
+    position: relative;
+    color: green;
+}
+
+.nice-select .option.selected:after {
+    content: "\2713";
+    position: absolute;
+    right: 10px;
+}
+
+.nice-select .option {
+    padding: 0 15px;
+}
+
+#data-table td {
+    font-size: 14px;
+    text-align: left;
+    padding: 0 8px;
+    border: none !important;
+}
+
+.menu_icon {
+    height: 13px;
+    width: 13px;
+}
+
+.menu_icon_color {
+    stroke: #6d4dff;
+}
+
+div.dt-container select.dt-input {
+    width: 65px;
+}
+
+.dt-length label {
+    text-transform: capitalize;
+}
+
+div.dt-container .dt-paging .dt-paging-button {
+    padding: 0 !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button.current,
+div.dt-container .dt-paging .dt-paging-button.current:hover {
+    border: none !important;
+    background: transparent !important;
+    color: rgb(243 109 0) !important;
+}
+
+table.dataTable.stripe > tbody > tr:nth-child(odd) > *,
+table.dataTable.display > tbody > tr:nth-child(odd) > * {
+    box-shadow: inset 0 0 0 9999px #ffffff;
+    box-shadow: inset 0 0 0 9999px #ffffff;
+}
+
+table.dataTable.display > tbody > tr:nth-child(odd) > .sorting_1,
+table.dataTable.order-column.stripe > tbody > tr:nth-child(odd) > .sorting_1 {
+    box-shadow: inset 0 0 0 9999px #ffffff;
+    box-shadow: inset 0 0 0 9999px #ffffff;
+}
+
+table.dataTable.display > tbody > tr:nth-child(even) > .sorting_1,
+table.dataTable.order-column.stripe > tbody > tr:nth-child(even) > .sorting_1 {
+    box-shadow: inset 0 0 0 9999px #ffffff;
+    box-shadow: inset 0 0 0 9999px #ffffff;
+}
+
+table tr {
+    height: 52px;
+}
+
+.title-width {
+    width: 325px;
+}
+
+/* ==== select box option design ==== */
+
+select > option {
+    background-color: #b8e1ba;
+}
+
+.dt-length,
+.dt-info,
+.dt-input,
+.pagination {
+    font-family: "Inter", "sans-serif";
+    font-weight: 400;
+    font-size: 14px;
+    color: #5e666e !important;
+}
+
+.dt-layout-row {
+    margin-bottom: 6px !important;
+}
+
+.dt-column-order {
+    color: black;
+    right: 4px;
+}
+
+/* Remove hover color for DataTables rows */
+.dataTable tbody tr:hover {
+    background-color: transparent !important;
+}
+
+table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order,
+table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order,
+table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order,
+table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order,
+table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order,
+table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order,
+table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order,
+table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
+    right: auto;
+    margin-left: 10px !important;
+}
+
+/* Remove the horizontal line (border-bottom) from DataTable header */
+table.dataTable thead th,
+table.dataTable thead {
+    border: none !important;
+}
+
+table.dataTable > tbody > tr {
+    border: 1px solid #ddd;
+}
+
+/* table.dataTable>tbody>tr:hover{
+    border:1px solid #F36D00 !important;
+} */
+
+/* Set the height of the Select2 box, font styles, and colors */
+.select2-container .select2-selection--single {
+    height: 40px !important;
+    border-color: #ddd !important;
+    font-family: "Inter", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #5e666e !important;
+    line-height: 40px !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    height: 40px !important;
+    border-color: #ddd !important;
+    font-family: "Inter", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #5e666e !important;
+    line-height: 40px !important;
+}
+
+/* Adjust the rendered text inside the Select2 box */
+.select2-selection__rendered {
+    line-height: 40px !important;
+    color: #5e666e !important;
+}
+
+/* Adjust the arrow (dropdown indicator) */
+.select2-selection__arrow {
+    height: 40px !important;
+}
+
+/* Customize the close (cross) icon */
+
+.select2-selection__clear {
+    display: none;
+}
+
+.selection {
+    position: relative;
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    height: 30px !important;
+    border: 1px solid #ddd !important;
+    background-color: #f3f4f6 !important;
+    top: -5px;
+    left: 10px;
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
+    color: #5e666e !important;
+    padding: 0 4px;
+    position: absolute;
+    left: 0;
+    top: -6px !important;
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__display {
+    position: relative;
+    left: 0;
+    top: -6px !important;
+}
+
+.dt-empty {
+    margin-top: 20px !important;
+    display: block;
+    color: #ef4444;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 600;
+}
+.descriptionBox p {
+    color: #5e666e;
+    font-size: 14px;
+    font-family: "Inter";
+    font-weight: 400;
+}

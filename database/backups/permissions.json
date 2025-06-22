@@ -1,0 +1,642 @@
+[
+    {
+        "type": "header",
+        "version": "5.2.0",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "log_my_request"
+    },
+    {
+        "type": "table",
+        "name": "permissions",
+        "database": "log_my_request",
+        "data": [
+            {
+                "id": "1",
+                "module_id": "1",
+                "name": "user view list",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "2",
+                "module_id": "1",
+                "name": "user create",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "3",
+                "module_id": "1",
+                "name": "user update",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "4",
+                "module_id": "1",
+                "name": "user delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "5",
+                "module_id": "1",
+                "name": "user restore",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "6",
+                "module_id": "1",
+                "name": "user force delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "7",
+                "module_id": "2",
+                "name": "role view list",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "8",
+                "module_id": "2",
+                "name": "role create",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "9",
+                "module_id": "2",
+                "name": "role update",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "10",
+                "module_id": "2",
+                "name": "role delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "11",
+                "module_id": "2",
+                "name": "role restore",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "12",
+                "module_id": "2",
+                "name": "role force delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "13",
+                "module_id": "3",
+                "name": "menu view list",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "14",
+                "module_id": "3",
+                "name": "menu create",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "15",
+                "module_id": "3",
+                "name": "menu update",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "16",
+                "module_id": "3",
+                "name": "menu delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "17",
+                "module_id": "3",
+                "name": "menu restore",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "18",
+                "module_id": "3",
+                "name": "menu force delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "19",
+                "module_id": "4",
+                "name": "module view list",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "20",
+                "module_id": "4",
+                "name": "module create",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "21",
+                "module_id": "4",
+                "name": "module update",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "22",
+                "module_id": "4",
+                "name": "module delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "23",
+                "module_id": "4",
+                "name": "module restore",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "24",
+                "module_id": "4",
+                "name": "module force delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 15:56:49",
+                "updated_at": "2024-09-27 15:56:49"
+            },
+            {
+                "id": "25",
+                "module_id": "5",
+                "name": "source view list",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:13",
+                "updated_at": "2024-09-27 16:36:13"
+            },
+            {
+                "id": "26",
+                "module_id": "5",
+                "name": "source create",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:13",
+                "updated_at": "2024-09-27 16:36:13"
+            },
+            {
+                "id": "27",
+                "module_id": "5",
+                "name": "source update",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:13",
+                "updated_at": "2024-09-27 16:36:13"
+            },
+            {
+                "id": "28",
+                "module_id": "5",
+                "name": "source delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:13",
+                "updated_at": "2024-09-27 16:36:13"
+            },
+            {
+                "id": "29",
+                "module_id": "5",
+                "name": "source restore",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:13",
+                "updated_at": "2024-09-27 16:36:13"
+            },
+            {
+                "id": "30",
+                "module_id": "5",
+                "name": "source force delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:13",
+                "updated_at": "2024-09-27 16:36:13"
+            },
+            {
+                "id": "31",
+                "module_id": "6",
+                "name": "requeststatus view list",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:31",
+                "updated_at": "2024-09-27 16:36:31"
+            },
+            {
+                "id": "32",
+                "module_id": "6",
+                "name": "requeststatus create",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:31",
+                "updated_at": "2024-09-27 16:36:31"
+            },
+            {
+                "id": "33",
+                "module_id": "6",
+                "name": "requeststatus update",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:31",
+                "updated_at": "2024-09-27 16:36:31"
+            },
+            {
+                "id": "34",
+                "module_id": "6",
+                "name": "requeststatus delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:31",
+                "updated_at": "2024-09-27 16:36:31"
+            },
+            {
+                "id": "35",
+                "module_id": "6",
+                "name": "requeststatus restore",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:31",
+                "updated_at": "2024-09-27 16:36:31"
+            },
+            {
+                "id": "36",
+                "module_id": "6",
+                "name": "requeststatus force delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:36:31",
+                "updated_at": "2024-09-27 16:36:31"
+            },
+            {
+                "id": "43",
+                "module_id": "8",
+                "name": "requestertype view list",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:37:28",
+                "updated_at": "2024-09-27 16:37:28"
+            },
+            {
+                "id": "44",
+                "module_id": "8",
+                "name": "requestertype create",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:37:28",
+                "updated_at": "2024-09-27 16:37:28"
+            },
+            {
+                "id": "45",
+                "module_id": "8",
+                "name": "requestertype update",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:37:28",
+                "updated_at": "2024-09-27 16:37:28"
+            },
+            {
+                "id": "46",
+                "module_id": "8",
+                "name": "requestertype delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:37:28",
+                "updated_at": "2024-09-27 16:37:28"
+            },
+            {
+                "id": "47",
+                "module_id": "8",
+                "name": "requestertype restore",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:37:28",
+                "updated_at": "2024-09-27 16:37:28"
+            },
+            {
+                "id": "48",
+                "module_id": "8",
+                "name": "requestertype force delete",
+                "guard_name": "web",
+                "created_at": "2024-09-27 16:37:28",
+                "updated_at": "2024-09-27 16:37:28"
+            },
+            {
+                "id": "49",
+                "module_id": "9",
+                "name": "request view list",
+                "guard_name": "web",
+                "created_at": "2024-10-01 16:51:19",
+                "updated_at": "2024-10-01 16:51:19"
+            },
+            {
+                "id": "50",
+                "module_id": "9",
+                "name": "request create",
+                "guard_name": "web",
+                "created_at": "2024-10-01 16:51:19",
+                "updated_at": "2024-10-01 16:51:19"
+            },
+            {
+                "id": "51",
+                "module_id": "9",
+                "name": "request update",
+                "guard_name": "web",
+                "created_at": "2024-10-01 16:51:19",
+                "updated_at": "2024-10-01 16:51:19"
+            },
+            {
+                "id": "52",
+                "module_id": "9",
+                "name": "request delete",
+                "guard_name": "web",
+                "created_at": "2024-10-01 16:51:19",
+                "updated_at": "2024-10-01 16:51:19"
+            },
+            {
+                "id": "53",
+                "module_id": "9",
+                "name": "request restore",
+                "guard_name": "web",
+                "created_at": "2024-10-01 16:51:19",
+                "updated_at": "2024-10-01 16:51:19"
+            },
+            {
+                "id": "54",
+                "module_id": "9",
+                "name": "request force delete",
+                "guard_name": "web",
+                "created_at": "2024-10-01 16:51:19",
+                "updated_at": "2024-10-01 16:51:19"
+            },
+            {
+                "id": "55",
+                "module_id": "10",
+                "name": "department view list",
+                "guard_name": "web",
+                "created_at": "2024-10-25 12:47:40",
+                "updated_at": "2024-10-25 12:47:40"
+            },
+            {
+                "id": "56",
+                "module_id": "10",
+                "name": "department create",
+                "guard_name": "web",
+                "created_at": "2024-10-25 12:47:40",
+                "updated_at": "2024-10-25 12:47:40"
+            },
+            {
+                "id": "57",
+                "module_id": "10",
+                "name": "department update",
+                "guard_name": "web",
+                "created_at": "2024-10-25 12:47:40",
+                "updated_at": "2024-10-25 12:47:40"
+            },
+            {
+                "id": "58",
+                "module_id": "10",
+                "name": "department delete",
+                "guard_name": "web",
+                "created_at": "2024-10-25 12:47:40",
+                "updated_at": "2024-10-25 12:47:40"
+            },
+            {
+                "id": "59",
+                "module_id": "10",
+                "name": "department restore",
+                "guard_name": "web",
+                "created_at": "2024-10-25 12:47:40",
+                "updated_at": "2024-10-25 12:47:40"
+            },
+            {
+                "id": "60",
+                "module_id": "10",
+                "name": "department force delete",
+                "guard_name": "web",
+                "created_at": "2024-10-25 12:47:40",
+                "updated_at": "2024-10-25 12:47:40"
+            },
+            {
+                "id": "61",
+                "module_id": "11",
+                "name": "category view list",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:05:09",
+                "updated_at": "2024-11-29 13:05:09"
+            },
+            {
+                "id": "62",
+                "module_id": "11",
+                "name": "category create",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:05:09",
+                "updated_at": "2024-11-29 13:05:09"
+            },
+            {
+                "id": "63",
+                "module_id": "11",
+                "name": "category update",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:05:09",
+                "updated_at": "2024-11-29 13:05:09"
+            },
+            {
+                "id": "64",
+                "module_id": "11",
+                "name": "category delete",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:05:09",
+                "updated_at": "2024-11-29 13:05:09"
+            },
+            {
+                "id": "65",
+                "module_id": "11",
+                "name": "category restore",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:05:09",
+                "updated_at": "2024-11-29 13:05:09"
+            },
+            {
+                "id": "66",
+                "module_id": "11",
+                "name": "category force delete",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:05:09",
+                "updated_at": "2024-11-29 13:05:09"
+            },
+            {
+                "id": "67",
+                "module_id": "12",
+                "name": "team view list",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:07:18",
+                "updated_at": "2024-11-29 13:07:18"
+            },
+            {
+                "id": "68",
+                "module_id": "12",
+                "name": "team create",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:07:18",
+                "updated_at": "2024-11-29 13:07:18"
+            },
+            {
+                "id": "69",
+                "module_id": "12",
+                "name": "team update",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:07:18",
+                "updated_at": "2024-11-29 13:07:18"
+            },
+            {
+                "id": "70",
+                "module_id": "12",
+                "name": "team delete",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:07:18",
+                "updated_at": "2024-11-29 13:07:18"
+            },
+            {
+                "id": "71",
+                "module_id": "12",
+                "name": "team restore",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:07:18",
+                "updated_at": "2024-11-29 13:07:18"
+            },
+            {
+                "id": "72",
+                "module_id": "12",
+                "name": "team force delete",
+                "guard_name": "web",
+                "created_at": "2024-11-29 13:07:18",
+                "updated_at": "2024-11-29 13:07:18"
+            },
+            {
+                "id": "79",
+                "module_id": "9",
+                "name": "open requests",
+                "guard_name": "web",
+                "created_at": "2024-11-29 14:36:48",
+                "updated_at": "2024-11-29 14:36:48"
+            },
+            {
+                "id": "80",
+                "module_id": "9",
+                "name": "assigned to me",
+                "guard_name": "web",
+                "created_at": "2024-11-29 14:37:18",
+                "updated_at": "2024-11-29 14:37:18"
+            },
+            {
+                "id": "81",
+                "module_id": "9",
+                "name": "in progress requests",
+                "guard_name": "web",
+                "created_at": "2024-11-29 14:37:37",
+                "updated_at": "2024-11-29 14:37:37"
+            },
+            {
+                "id": "82",
+                "module_id": "9",
+                "name": "on hold requests",
+                "guard_name": "web",
+                "created_at": "2024-11-29 14:37:52",
+                "updated_at": "2024-11-29 14:37:52"
+            },
+            {
+                "id": "83",
+                "module_id": "9",
+                "name": "resolved requests",
+                "guard_name": "web",
+                "created_at": "2024-11-29 14:38:07",
+                "updated_at": "2024-11-29 14:38:07"
+            },
+            {
+                "id": "84",
+                "module_id": "9",
+                "name": "closed requests",
+                "guard_name": "web",
+                "created_at": "2024-11-29 14:38:17",
+                "updated_at": "2024-11-29 14:38:17"
+            },
+            {
+                "id": "85",
+                "module_id": "9",
+                "name": "unassigned requests",
+                "guard_name": "web",
+                "created_at": "2024-11-29 14:38:26",
+                "updated_at": "2024-11-29 14:38:26"
+            },
+            {
+                "id": "86",
+                "module_id": "13",
+                "name": "top requesters section view",
+                "guard_name": "web",
+                "created_at": "2024-11-30 13:28:01",
+                "updated_at": "2024-11-30 13:28:01"
+            },
+            {
+                "id": "87",
+                "module_id": "13",
+                "name": "top agents section view",
+                "guard_name": "web",
+                "created_at": "2024-11-30 13:29:00",
+                "updated_at": "2024-11-30 13:29:00"
+            },
+            {
+                "id": "88",
+                "module_id": "13",
+                "name": "top categories section view",
+                "guard_name": "web",
+                "created_at": "2024-11-30 13:29:29",
+                "updated_at": "2024-11-30 13:29:29"
+            },
+            {
+                "id": "89",
+                "module_id": "13",
+                "name": "top teams section view",
+                "guard_name": "web",
+                "created_at": "2024-11-30 13:29:45",
+                "updated_at": "2024-11-30 13:29:45"
+            },
+            {
+                "id": "90",
+                "module_id": "13",
+                "name": "request card view",
+                "guard_name": "web",
+                "created_at": "2024-11-30 13:30:31",
+                "updated_at": "2024-11-30 13:30:31"
+            }
+        ]
+    }
+]
