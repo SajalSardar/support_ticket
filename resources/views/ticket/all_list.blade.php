@@ -14,11 +14,16 @@
     <div class="lg:flex md:flex lg:justify-between md:justify-between lg:items-center md:items-center">
         <div class="flex flex-wrap lg:gap-3 md:gap-2 sm:gap-3 lg:justify-end md:justify-end sm:justify-start">
             <div style="width: 265px;">
-                <input type="hidden" id="me_mode_search" value="{{ Route::is('admin.ticket.list.active.memode') ? 'me_mode' : '' }}">
-                <x-forms.text-input-icon dir="start" id="ticket_id_search" class="text-paragraph" placeholder="Search Request ID or Requester">
+                <input type="hidden" id="me_mode_search"
+                    value="{{ Route::is('admin.ticket.list.active.memode') ? 'me_mode' : '' }}">
+                <x-forms.text-input-icon dir="start" id="ticket_id_search" class="text-paragraph"
+                    placeholder="Search Request ID or Requester">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#5E666E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M20.9999 21.0004L16.6499 16.6504" stroke="#5E666E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                            stroke="#5E666E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M20.9999 21.0004L16.6499 16.6504" stroke="#5E666E" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </x-forms.text-input-icon>
             </div>
@@ -35,13 +40,19 @@
                             </div>
                         </div>
                         <div class="absolute top-[50%] translate-y-[-50%] -right-5">
-                            <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]"
+                                width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <span x-show="priority" class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base" tabindex="0" style="display: block;" @click="priority = '';$nextTick(() => $('#priority_search').trigger('change'))">✕</span>
+                <span x-show="priority"
+                    class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base"
+                    tabindex="0" style="display: block;"
+                    @click="priority = '';$nextTick(() => $('#priority_search').trigger('change'))">✕</span>
             </div>
             <div style="width:110px" class="relative" x-data="{ status: '' }">
                 <div style="width: 100%;" class="relative custom-select">
@@ -55,12 +66,17 @@
                         </div>
                     </div>
                     <div class="absolute top-[50%] translate-y-[-50%] -right-5">
-                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                 </div>
-                <span x-show="status" class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base" tabindex="0" style="display: block;" @click="status = '';$nextTick(() => $('#status_search').trigger('change'))">✕</span>
+                <span x-show="status"
+                    class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base"
+                    tabindex="0" style="display: block;"
+                    @click="status = '';$nextTick(() => $('#status_search').trigger('change'))">✕</span>
             </div>
             <div style="width:175px" class="relative" x-data="{ category: '' }">
                 <div style="width: 100%;" class="relative custom-select">
@@ -74,12 +90,17 @@
                         </div>
                     </div>
                     <div class="absolute top-[50%] translate-y-[-50%] -right-5">
-                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                 </div>
-                <span x-show="category" class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base" tabindex="0" style="display: block;" @click="category = '';$nextTick(() => $('#category_search').trigger('change'))">✕</span>
+                <span x-show="category"
+                    class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base"
+                    tabindex="0" style="display: block;"
+                    @click="category = '';$nextTick(() => $('#category_search').trigger('change'))">✕</span>
             </div>
             <div style="width:150px" class="relative" x-data="{ department: '' }">
                 <div style="width: 100%;" class="relative custom-select">
@@ -93,12 +114,17 @@
                         </div>
                     </div>
                     <div class="absolute top-[50%] translate-y-[-50%] -right-5">
-                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                 </div>
-                <span x-show="department" class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base" tabindex="0" style="display: block;" @click="team = '';$nextTick(() => $('#team_search').trigger('change'))">✕</span>
+                <span x-show="department"
+                    class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base"
+                    tabindex="0" style="display: block;"
+                    @click="team = '';$nextTick(() => $('#team_search').trigger('change'))">✕</span>
             </div>
             <div style="width:120px" class="relative" x-data="{ team: '' }">
                 <div style="width: 100%;" class="relative custom-select">
@@ -113,12 +139,17 @@
                     </div>
 
                     <div class="absolute top-[50%] translate-y-[-50%] -right-5">
-                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                 </div>
-                <span x-show="team" class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base" tabindex="0" style="display: block;" @click="team = '';$nextTick(() => $('#team_search').trigger('change'))">✕</span>
+                <span x-show="team"
+                    class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base"
+                    tabindex="0" style="display: block;"
+                    @click="team = '';$nextTick(() => $('#team_search').trigger('change'))">✕</span>
             </div>
             <div style="width:120px" class="relative" x-data="{ due_date_x: '' }">
                 <div style="width: 100%;" class="relative custom-select">
@@ -133,12 +164,17 @@
                         </div>
                     </div>
                     <div class="absolute top-[50%] translate-y-[-50%] -right-5">
-                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg class="text-[#5e666e] ri-arrow-down-s-line ml-auto group-[.selected]:rotate-90 mr-[24px]"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                 </div>
-                <span x-show="due_date_x" class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base" tabindex="0" style="display: block;" @click="due_date_x = '';$nextTick(() => $('#due_date_search').trigger('change'))">✕</span>
+                <span x-show="due_date_x"
+                    class="absolute top-1 end-9 text-surface cursor-pointer focus:text-primary outline-none dark:text-white text-base"
+                    tabindex="0" style="display: block;"
+                    @click="due_date_x = '';$nextTick(() => $('#due_date_search').trigger('change'))">✕</span>
             </div>
             <div>
                 <x-buttons.secondary id="resetButton">Reset All</x-buttons.secondary>
@@ -149,7 +185,8 @@
             <x-actions.href href="{{ route('admin.ticket.create') }}" class="flex items-center gap-1">
                 <span>Create A Request</span>
                 <svg fill="none" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
             </x-actions.href>
         </div>
@@ -164,14 +201,22 @@
                         <th class="text-heading-dark !text-end w-[50px]">
                             <span class="flex gap-2 !justify-center !items-center">
                                 <button type="submit">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.5 5H4.16667H17.5" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M15.8332 4.99984V16.6665C15.8332 17.1085 15.6576 17.5325 15.345 17.845C15.0325 18.1576 14.6085 18.3332 14.1665 18.3332H5.83317C5.39114 18.3332 4.96722 18.1576 4.65466 17.845C4.3421 17.5325 4.1665 17.1085 4.1665 16.6665V4.99984M6.6665 4.99984V3.33317C6.6665 2.89114 6.8421 2.46722 7.15466 2.15466C7.46722 1.8421 7.89114 1.6665 8.33317 1.6665H11.6665C12.1085 1.6665 12.5325 1.8421 12.845 2.15466C13.1576 2.46722 13.3332 2.89114 13.3332 3.33317V4.99984" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M8.3335 9.1665V14.1665" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M11.6665 9.1665V14.1665" stroke="#5e666e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.5 5H4.16667H17.5" stroke="#5e666e" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M15.8332 4.99984V16.6665C15.8332 17.1085 15.6576 17.5325 15.345 17.845C15.0325 18.1576 14.6085 18.3332 14.1665 18.3332H5.83317C5.39114 18.3332 4.96722 18.1576 4.65466 17.845C4.3421 17.5325 4.1665 17.1085 4.1665 16.6665V4.99984M6.6665 4.99984V3.33317C6.6665 2.89114 6.8421 2.46722 7.15466 2.15466C7.46722 1.8421 7.89114 1.6665 8.33317 1.6665H11.6665C12.1085 1.6665 12.5325 1.8421 12.845 2.15466C13.1576 2.46722 13.3332 2.89114 13.3332 3.33317V4.99984"
+                                            stroke="#5e666e" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8.3335 9.1665V14.1665" stroke="#5e666e" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M11.6665 9.1665V14.1665" stroke="#5e666e" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
-                                <input id="checkbox1" type="checkbox" class="w-4 h-4 mr-3 rounded border border-base-500 focus:ring-transparent text-primary-400" />
+                                <input id="checkbox1" type="checkbox"
+                                    class="w-4 h-4 mr-3 rounded border border-base-500 focus:ring-transparent text-primary-400" />
                             </span>
                         </th>
                         <th class="text-heading-dark w-[50px]">ID</th>
@@ -185,6 +230,7 @@
                         <th class="text-heading-dark">Assigned Team</th>
                         <th class="text-heading-dark">Assigned Agent</th>
                         <th class="text-heading-dark">Created</th>
+                        <th class="text-heading-dark">Created By</th>
                         <th class="text-heading-dark">Age</th>
                         <th class="text-heading-dark">Due</th>
                         <th class="text-heading-dark"></th>
@@ -288,6 +334,10 @@
                     {
                         data: 'created_at',
                         name: 'created_at'
+                    },
+                    {
+                        data: 'created_by',
+                        name: 'created_by'
                     },
                     {
                         data: 'request_age',

@@ -21,8 +21,7 @@ use Illuminate\Support\Str;
 use Laravolt\Avatar\Avatar;
 use Yajra\DataTables\Facades\DataTables;
 
-class TicketService
-{
+class TicketService {
     /**
      * Define public property $user;
      * @var array|object
@@ -40,8 +39,7 @@ class TicketService
      * @param $form
      * @return array|object
      */
-    public function store(array | object $request): array | object
-    {
+    public function store(array | object $request): array | object {
         $checkUser = User::query()->where('email', $request->requester_email)->first();
         if (!empty($checkUser)) {
             $request->credentials = false;
@@ -82,7 +80,7 @@ class TicketService
                 'priority'         => $request?->priority,
                 'ticket_type'      => 'customer',
                 'due_date'         => $request?->due_date,
-                'created_by'       => $request->created_by ? $request->created_by : Auth::id(),
+                'created_by'       => Auth::id(),
                 'sub_category_id'  => $request?->sub_category_id,
             ]
         );
@@ -105,8 +103,7 @@ class TicketService
      * @param $request
      * @return array|object|bool
      */
-    public function update(Model $model, $request)
-    {
+    public function update(Model $model, $request) {
 
         $ticket        = Ticket::with('owners')->where('id', $model->getKey())->first();
         $requester     = User::where('email', $request->requester_email)->first();
@@ -159,8 +156,7 @@ class TicketService
         return $ticket;
     }
 
-    public static function createTicketNote($ticketId, $old_status = null, $new_status = null, $note_type, $note = null)
-    {
+    public static function createTicketNote($ticketId, $old_status = null, $new_status = null, $note_type, $note = null) {
         $note = TicketNote::create(
             [
                 'ticket_id'  => $ticketId,
@@ -174,8 +170,7 @@ class TicketService
 
         return $note;
     }
-    public static function createTicketLog($ticketId, $ticket_status, $status = null, $comment = null)
-    {
+    public static function createTicketLog($ticketId, $ticket_status, $status = null, $comment = null) {
         $log = TicketLog::create(
             [
                 'ticket_id'     => $ticketId,
@@ -190,8 +185,7 @@ class TicketService
         return $log;
     }
 
-    public static function getTicketStatusById($id)
-    {
+    public static function getTicketStatusById($id) {
         $ticketStatus = TicketStatus::where('id', $id)->first();
         if ($ticketStatus) {
 
@@ -200,8 +194,7 @@ class TicketService
         return "Status Not Found!";
     }
 
-    public static function ticketChangesNote($request, $ticket, $ticket_status)
-    {
+    public static function ticketChangesNote($request, $ticket, $ticket_status) {
 
         $emailResponse = [];
         if ($request->owner_id && ($ticket->owners->isEmpty() || $ticket->owners->last()->id != $request->owner_id)) {
@@ -283,8 +276,7 @@ class TicketService
         return $emailResponse;
     }
 
-    public static function allTicketListDataTable($request)
-    {
+    public static function allTicketListDataTable($request) {
         $ticketStatus = null;
 
         if ($request->query_status != 'unassign') {
@@ -299,10 +291,9 @@ class TicketService
         }
         if (Auth::user()->hasRole(['agent', 'Agent'])) {
             // agent:view only own department request
-            $user = User::with('teams')->where('id', Auth::id())->first();
-            if ($user->hasAnyPermission(['agent:view only own department request'])) {
-                $departments = $user->teams->pluck('department_id');
-                $tickets->whereIn('department_id', $departments);
+            $user = User::where('id', Auth::id())->first();
+            if ($user->hasAnyPermission(['agent:view only own request'])) {
+                $tickets->where('created_by', Auth::id());
             }
         }
 
@@ -346,30 +337,30 @@ class TicketService
                     $dueDate = '';
 
                     switch ($request->due_date_search) {
-                        case 'today':
-                            $todayDate = Carbon::today()->toDateString();
-                            $query->whereDate('due_date', '=', $todayDate);
-                            break;
+                    case 'today':
+                        $todayDate = Carbon::today()->toDateString();
+                        $query->whereDate('due_date', '=', $todayDate);
+                        break;
 
-                        case 'tomorrow':
-                            $tomorrowDate = Carbon::tomorrow()->toDateString();
-                            $query->whereDate('due_date', '=', $tomorrowDate);
-                            break;
+                    case 'tomorrow':
+                        $tomorrowDate = Carbon::tomorrow()->toDateString();
+                        $query->whereDate('due_date', '=', $tomorrowDate);
+                        break;
 
-                        case 'this_week':
-                            $startOfWeek = Carbon::now()->startOfWeek()->toDateString();
-                            $endOfWeek   = Carbon::now()->endOfWeek()->toDateString();
-                            $query->whereBetween('due_date', [$startOfWeek, $endOfWeek]);
-                            break;
+                    case 'this_week':
+                        $startOfWeek = Carbon::now()->startOfWeek()->toDateString();
+                        $endOfWeek   = Carbon::now()->endOfWeek()->toDateString();
+                        $query->whereBetween('due_date', [$startOfWeek, $endOfWeek]);
+                        break;
 
-                        case 'this_month':
-                            $startOfMonth = Carbon::now()->startOfMonth()->toDateString();
-                            $endOfMonth   = Carbon::now()->endOfMonth()->toDateString();
-                            $query->whereBetween('due_date', [$startOfMonth, $endOfMonth]);
-                            break;
+                    case 'this_month':
+                        $startOfMonth = Carbon::now()->startOfMonth()->toDateString();
+                        $endOfMonth   = Carbon::now()->endOfMonth()->toDateString();
+                        $query->whereBetween('due_date', [$startOfMonth, $endOfMonth]);
+                        break;
 
-                        default:
-                            break;
+                    default:
+                        break;
                     }
                 }
             });
@@ -449,6 +440,10 @@ class TicketService
                 $data = '<div style="width:150px"><span class="text-paragraph" style="width:120px">' . ISODate($tickets?->created_at) . '</span></div>';
                 return $data;
             })
+            ->editColumn('created_by', function ($tickets) {
+                $data = '<div style="width:150px"><span class="text-paragraph" style="width:120px">' . $tickets?->creator->name . '</span></div>';
+                return $data;
+            })
             ->addColumn('request_age', function ($tickets) {
                 $data = '<div style="width:250px"><span class="text-paragraph">' . dayMonthYearHourMinuteSecond($tickets?->created_at, $tickets?->resolved_at) . '</span></div>';
                 return $data;
@@ -514,8 +509,7 @@ class TicketService
             ->make(true);
     }
 
-    public static function trashTicketListDataTable($request)
-    {
+    public static function trashTicketListDataTable($request) {
 
         $tickets = Ticket::query()
             ->onlyTrashed()

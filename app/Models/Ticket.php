@@ -74,6 +74,13 @@ class Ticket extends Model {
     public function user(): BelongsTo {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+    /**
+     * Define public method team() associate with Ticket
+     * @return BelongsTo
+     */
+    public function creator(): BelongsTo {
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
 
     /**
      * Define public method ticket_status() associate with Ticket
