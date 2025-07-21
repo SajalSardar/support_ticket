@@ -89,7 +89,7 @@
                         <div class="absolute top-10 left-12 pe-14">
                             <h3 class="font-inter text-2xl font-semibold text-[#333]">Welcome Back!</h3>
                             <p class="text-title">
-                                <span class="!text-primary-400 !font-semibold">LogmyRequest</span>
+                                <span class="!text-primary-400 !font-semibold">Support Ticket</span>
                                 is a customer service platform designed to help businesses efficiently track, manage, and resolve customer requests in real time. Our mission is to streamline communication and ensure every query is addressed promptly, enhancing customer satisfaction.
                             </p>
                         </div>
