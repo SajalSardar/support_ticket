@@ -94,7 +94,7 @@
                         </x-buttons.primary>
                     </div>
 
-                    <div class="mt-2 text-center">
+                    {{-- <div class="mt-2 text-center">
                         <span class="text-paragraph">Or</span>
                     </div>
 
@@ -116,7 +116,7 @@
                                 Google</span>
                             <span class="pl-1 md:hidden">Sign up</span>
                         </a>
-                    </div>
+                    </div> --}}
 
                     <div class="mt-2">
                         <p class="text-paragraph sm:mt-0">

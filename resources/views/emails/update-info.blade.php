@@ -190,10 +190,10 @@
           </table>
           <div style="margin-top: 54px; margin-left: 4px">
             <p class="titleHeading">Best regards,</p>
-            <p>LogMyRequest Support Team</p>
+            <p>supportticket Support Team</p>
             <p>
-              <a href="https://www.logmyrequest.com"
-                >https://www.logmyrequest.com</a
+              <a href="https://www.supportticket.com"
+                >https://www.supportticket.com</a
               >
             </p>
             <p class="warning" style="margin-top: 30px">
@@ -203,7 +203,7 @@
         </td>
       </tr>
       <tr>
-        <td class="footer">&copy; 2024 LogMyRequest. All rights reserved.</td>
+        <td class="footer">&copy; 2024 supportticket. All rights reserved.</td>
       </tr>
     </table>
   </body>

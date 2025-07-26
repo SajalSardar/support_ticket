@@ -15,7 +15,7 @@
                 <table width="650" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; padding: 40px; border: 1px solid #DDDDDD; border-radius: 5px; text-align: center;">
                     <tr>
                         <td>
-                            <h3 style="padding-bottom: 40px; font-size: 24px; color: #333;">LogMyRequest</h3>
+                            <h3 style="padding-bottom: 40px; font-size: 24px; color: #333;">supportticket</h3>
                         </td>
                     </tr>
                     <tr>

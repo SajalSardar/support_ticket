@@ -171,11 +171,11 @@
                     <p class="text-caption">
                         If you need to provide additional information or have any further
                         questions, feel free to reply to this email or contact us at
-                        support@logmyrequest.com or (123) 456-7890.
+                        support@supportticket.com or (123) 456-7890.
                     </p>
 
                     <p class="text-caption" style="padding-top: 12px">
-                        Thank you for your patience and for choosing LogMyRequest. We’re
+                        Thank you for your patience and for choosing supportticket. We’re
                         here to assist you!
                     </p>
                 </td>
@@ -189,10 +189,10 @@
                     <p class="text-caption" style="padding-bottom: 4px">
                         Tech Support Team
                     </p>
-                    <p class="text-caption" style="padding-bottom: 4px">LogMyRequest</p>
+                    <p class="text-caption" style="padding-bottom: 4px">supportticket</p>
                     <p class="text-caption">
-                        <span>https://www.logmyrequest.com</span> |
-                        <span>support@logmyrequest.com</span> |
+                        <span>https://www.supportticket.com</span> |
+                        <span>support@supportticket.com</span> |
                         <span>(123) 456-7890</span>
                     </p>
                 </td>

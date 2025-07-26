@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sources', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->comment('website,phone,email,in_person/walk_in,logmyrequest');
+            $table->string('title')->comment('website,phone,email,in_person/walk_in,supportticket');
             $table->boolean('status')->default(true);
             $table->softDeletes();
             $table->timestamps();

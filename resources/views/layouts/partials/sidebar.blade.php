@@ -1,6 +1,6 @@
 <div class="fixed left-0 top-0 w-[276px] h-full bg-white py-5 z-50 sidebar-menu transition-transform" style="border-right: 1px solid #cfcece">
     <a href="javascript:;" class="flex items-center justify-center pb-4">
-        {{-- <img src="{{ asset('assets/icons/logMyRequest.png') }}" alt="logo"> --}}
+        {{-- <img src="{{ asset('assets/icons/supportticket.png') }}" alt="logo"> --}}
         <h1 style="font-weight: bold;text-transform: uppercase;">Support System</h1>
     </a>
 
