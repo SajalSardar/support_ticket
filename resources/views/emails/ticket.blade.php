@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
         rel="stylesheet" />
     <title>Request Assigned</title>
     <style>
@@ -102,34 +101,19 @@
 </head>
 
 <body>
-    <table
-        class="email-container"
-        cellspacing="0"
-        cellpadding="0"
-        border="0"
-        align="center">
+    <table class="email-container" cellspacing="0" cellpadding="0" border="0" align="center">
         <tr>
             <td align="center" style="padding: 32px 0">
                 <!-- Circle Container -->
-                <table
-                    width="116"
-                    height="116"
-                    border="0"
-                    cellspacing="0"
-                    cellpadding="0"
-                    style="
+                <table width="116" height="116" border="0" cellspacing="0" cellpadding="0" style="
               background-color: #fffaf6;
               border-radius: 50%;
               text-align: center;
             ">
                     <tr>
                         <td align="center" style="line-height: 0">
-                            <img
-                                src="https://res.cloudinary.com/doffuwqxx/image/upload/v1735625159/check_amxayi.png"
-                                alt="Success Icon"
-                                width="50"
-                                height="50"
-                                style="display: block" />
+                            <img src="https://res.cloudinary.com/doffuwqxx/image/upload/v1735625159/check_amxayi.png"
+                                alt="Success Icon" width="50" height="50" style="display: block" />
                         </td>
                     </tr>
                 </table>
@@ -138,17 +122,13 @@
         <tr>
             <td class="content">
                 <h1>Your Request Has Been Successfully Created!</h1>
-                <p class="titleHeading" style="padding-left: 4px">{{ $ticket?->requester_name }},</p>
+                <p class="titleHeading" style="padding-left: 4px">{{ $ticket?->user->name }},</p>
                 <p style="padding-left: 4px">
                     Thank you for submitting your request. We've received your details,
                     and our team is already working to address your query. Below are the
                     details of your request for your reference:
                 </p>
-                <table
-                    class="details-table"
-                    cellspacing="0"
-                    cellpadding="0"
-                    border="0">
+                <table class="details-table" cellspacing="0" cellpadding="0" border="0">
                     <tr>
                         <td>
                             <span class="titleHeading">Request Details</span>
@@ -163,7 +143,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><span class="titleHeading">Email :</span> {{ $ticket->requester_email  }}</td>
+                        <td><span class="titleHeading">Email :</span> {{ $ticket->user->email }}</td>
                     </tr>
                     @if ($ticket->credentials == '1')
                     <tr>
@@ -174,7 +154,7 @@
                     @endif
                     <tr>
                         <td>
-                            <span class="titleHeading">Category :</span> {{ $ticket?->category_id }}
+                            <span class="titleHeading">Category :</span> {{ $ticket?->category->name }}
                         </td>
                     </tr>
                     <tr>
@@ -182,7 +162,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <span class="titleHeading">Description :</span> {!! $ticket?->request_description !!}.
+                            <span class="titleHeading">Description :</span> {!! $ticket?->description !!}.
                         </td>
                     </tr>
                 </table>
