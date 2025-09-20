@@ -375,11 +375,15 @@ class TicketService {
                 return '<div class="w-[70px]"><span class="text-paragraph">' . ID(prefix: 'REQ', id: $tickets->id) . '</span></div>';
             })
             ->editColumn('title', function ($tickets) {
-                return '<a href="' . route('admin.ticket.show', ['ticket' => $tickets?->id]) . '" class=" text-paragraph hover:text-primary-400 block" style="width: 280px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' . Str::limit(ucfirst($tickets->title), 50, '...') . '</a>';
+                if (Auth::user()->hasRole(['Employee']) && $tickets->owners->last()->id != Auth::id()) {
+                    return '<a href="#" class=" text-paragraph hover:text-primary-400 block" style="width: 280px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' . Str::limit(ucfirst($tickets->title), 50, '...') . '</a>';
+                } else {
+                    return '<a href="' . route('admin.ticket.show', ['ticket' => $tickets?->id]) . '" class=" text-paragraph hover:text-primary-400 block" style="width: 280px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' . Str::limit(ucfirst($tickets->title), 50, '...') . '</a>';
+                }
             })
             ->editColumn('priority', function ($tickets) {
                 $priorityColor = match ($tickets->priority) {
-                    'high' => '#EF4444',
+                    'high'   => '#EF4444',
                     'low'    => '#10B981',
                     'medium' => '#3B82F6',
                 };
@@ -557,7 +561,7 @@ class TicketService {
             })
             ->editColumn('priority', function ($tickets) {
                 $priorityColor = match ($tickets->priority) {
-                    'high' => '#EF4444',
+                    'high'   => '#EF4444',
                     'low'    => '#10B981',
                     'medium' => '#3B82F6',
                 };
