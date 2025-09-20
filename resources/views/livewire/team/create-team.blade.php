@@ -41,36 +41,36 @@
                     </div>
                 </div>
             </div>
-            <div class="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 sm:gap-1 md:gap-2">
-                <div class="pt-2 w-full">
-                    <x-forms.label for="form.department_id" required='yes'>
-                        {{ __('Department') }}
-                    </x-forms.label>
-                    <div wire:ignore>
-                        <x-forms.select2-select wire:model.defer='form.department_id' id="department_id">
-                            <option value="">Select Department</option>
-                            @foreach ($departments as $department)
-                            <option value="{{ $department->id }}">{{ $department->name }}</option>
-                            @endforeach
-                        </x-forms.select2-select>
-                        <x-input-error :messages="$errors->get('form.department_id')" class="mt-2" />
-                    </div>
+            <div class="pt-2 w-full">
+                <x-forms.label for="form.department_id" required="yes">
+                    {{ __('Department') }}
+                </x-forms.label>
+                <div wire:ignore>
+                    <x-forms.select2-select wire:model="form.department_id" id="department_id">
+                        <option value="">Select Department</option>
+                        @foreach ($departments as $department)
+                        <option value="{{ $department->id }}">{{ $department->name }}</option>
+                        @endforeach
+                    </x-forms.select2-select>
+                    <x-input-error :messages="$errors->get('form.department_id')" class="mt-2" />
                 </div>
             </div>
-            <div class="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 sm:gap-1 md:gap-2">
-                <div class="pt-2 w-full">
-                    <x-forms.label for="form.agent_id">
-                        {{ __('Employee') }}
-                    </x-forms.label>
-                    <div wire:ignore>
-                        <x-forms.select2-select wire:model.defer='form.agent_id' id="agent_id" multiple>
-                            <option value="" disabled>Select agent</option>
-                            @foreach ($agentUser as $agent)
-                            <option value="{{ $agent->id }}">{{ $agent->name }}</option>
-                            @endforeach
-                        </x-forms.select2-select>
-                        <x-input-error :messages="$errors->get('form.agent_id')" class="mt-2" />
-                    </div>
+
+            {{-- Employee Select --}}
+            <div class="pt-2 w-full">
+                <x-forms.label for="form.agent_id">
+                    {{ __('Employee') }}
+                </x-forms.label>
+                <div>
+                    <x-forms.select2-select wire:model="form.agent_id" id="agent_id" multiple>
+                        <option value="" disabled>Select Employee</option>
+                        @forelse ($employees as $emp)
+                        <option value="{{ $emp['id'] }}">{{ $emp['name'] }}</option>
+                        @empty
+                        <option value="" disabled>No employees found</option>
+                        @endforelse
+                    </x-forms.select2-select>
+                    <x-input-error :messages="$errors->get('form.agent_id')" class="mt-2" />
                 </div>
             </div>
             <div class="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 sm:gap-1 md:gap-2">

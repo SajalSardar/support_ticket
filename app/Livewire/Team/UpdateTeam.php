@@ -4,7 +4,9 @@ namespace App\Livewire\Team;
 
 use App\Enums\Bucket;
 use App\LocaleStorage\Fileupload;
+use App\Models\Department;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
@@ -37,6 +39,8 @@ class UpdateTeam extends Component {
     #[Validate]
     public $department_id;
 
+    public $employees = [];
+
     protected function rules() {
         return [
             'name'             => 'required|min:3|unique:categories,name,' . $this->team->id,
@@ -54,7 +58,19 @@ class UpdateTeam extends Component {
         $this->categories_input = $this->team->teamCategories->pluck('id')->toArray();
         $this->agent_id         = $this->team->agents->pluck('id')->toArray();
         $this->department_id    = $this->team->department->id ?? null;
+        $this->departments      = Department::where('status', 1)->get();
+        $this->employees        = User::role('employee')
+            ->where('department_id', $this->department_id)
+            ->get();
     }
+
+    public function updatedFormDepartmentId($departmentId) {
+        $this->employees = User::role('employee')
+            ->where('department_id', $departmentId)
+            ->get();
+
+    }
+
     public function update() {
         Gate::authorize('update', Team::class);
         $this->validate();

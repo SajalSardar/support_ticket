@@ -50,8 +50,8 @@
                     <x-forms.label for="department_id" required='yes'>
                         {{ __('Department') }}
                     </x-forms.label>
-                    <div wire:ignore>
-                        <x-forms.select2-select wire:model.defer='department_id' id="department_id">
+                    <div>
+                        <x-forms.select2-select wire:model='department_id' id="department_id">
                             <option value="">Select Department</option>
                             @foreach ($departments as $department)
                             <option value="{{ $department->id }}">{{ $department->name }}</option>
@@ -67,12 +67,12 @@
                     <x-forms.label for="agent_id">
                         {{ __('Employee') }}
                     </x-forms.label>
-                    <div wire:ignore>
-                        <x-forms.select2-select wire:model.defer='agent_id' id="agent_id" multiple>
-                            <option disabled value="">Select agent</option>
-                            @foreach ($agentUser as $agent)
-                            <option value="{{ $agent->id }}" @if (in_array($agent->id, $agent_id)) selected @endif>
-                                {{ $agent->name }}
+                    <div>
+                        <x-forms.select2-select wire:model='agent_id' id="agent_id" multiple>
+                            <option disabled value="">Select Employee</option>
+                            @foreach ($employees as $agent)
+                            <option value="{{ $agent['id'] }}" @if (in_array($agent['id'], $agent_id)) selected @endif>
+                                {{ $agent['name'] }}
                             </option>
                             @endforeach
                         </x-forms.select2-select>

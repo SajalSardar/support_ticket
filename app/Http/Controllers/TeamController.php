@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Department;
 use App\Models\Team;
 use App\Models\TeamCategory;
-use App\Models\User;
 use Helper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
@@ -14,13 +12,11 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Gate;
 use Yajra\DataTables\Facades\DataTables;
 
-class TeamController extends Controller
-{
+class TeamController extends Controller {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
+    public function index() {
         Gate::authorize('viewAny', Team::class);
         $collections = Team::query()
             ->with('image', 'agents', 'department', 'teamCategories')
@@ -32,8 +28,7 @@ class TeamController extends Controller
      * Define public method displayListDatatable to display the datatable resources
      * @param Request $request
      */
-    public function displayListDatatable(Request $request)
-    {
+    public function displayListDatatable(Request $request) {
         Gate::authorize('viewAny', Team::class);
 
         $team = Cache::remember('team_list', 60 * 60, function () {
@@ -53,9 +48,9 @@ class TeamController extends Controller
 
             ->editColumn('name', function ($team) {
                 $imageUrl = $team->image?->url ?? asset('assets/images/profile.jpg');
-                $image = $team->image
-                    ? '<img class="rounded-lg shadow-lg" width="40" height="40" style="border-radius: 50%; border:1px solid #eee;" alt="profile" src="' . $imageUrl . '">'
-                    : avatar($team->name);
+                $image    = $team->image
+                ? '<img class="rounded-lg shadow-lg" width="40" height="40" style="border-radius: 50%; border:1px solid #eee;" alt="profile" src="' . $imageUrl . '">'
+                : avatar($team->name);
                 return '
                     <div class="flex items-center" style="width: 200px;">
                         ' . $image . '
@@ -78,7 +73,7 @@ class TeamController extends Controller
             })
 
             ->addColumn('action_column', function ($team) {
-                $editUrl = route('admin.team.edit', $team?->id);
+                $editUrl   = route('admin.team.edit', $team?->id);
                 $deleteUrl = route('admin.team.destroy', $team?->id);
 
                 return '
@@ -94,7 +89,7 @@ class TeamController extends Controller
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                     </button>
-                    
+
                     <div id="action-' . $team->id . '" class="action-content shadow-lg z-30 absolute top-5 -left-6 bg-white rounded-lg overflow-hidden min-w-[120px]">
                         <ul>
                             <li class="hover:bg-slate-50">
@@ -123,21 +118,19 @@ class TeamController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
+    public function create() {
         Gate::authorize('create', Team::class);
         $usesCategory = TeamCategory::pluck('category_id');
-        $departments  = Department::where('status', 1)->get();
-        $categories   = Category::query()->whereNotIn('id', $usesCategory)->get();
-        $agentUser    = User::role('agent')->get();
-        return view('team.create', compact('categories', 'agentUser', 'departments'));
+        // $departments  = Department::where('status', 1)->get();
+        $categories = Category::query()->whereNotIn('id', $usesCategory)->get();
+        // $agentUser    = User::role('agent')->get();
+        return view('team.create', compact('categories'));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Team $team)
-    {
+    public function show(Team $team) {
         Gate::authorize('view', $team);
         return view('team.show');
     }
@@ -146,23 +139,21 @@ class TeamController extends Controller
      * Show the form for editing the specified resource.
      * @param Team $team
      */
-    public function edit(Team $team)
-    {
+    public function edit(Team $team) {
         Gate::authorize('update', $team);
-        $departments  = Department::where('status', 1)->get();
+        // $departments  = Department::where('status', 1)->get();
         $usesCategory = TeamCategory::where('team_id', '!=', $team->id)->pluck('category_id');
         $categories   = Category::query()->whereNotIn('id', $usesCategory)->get();
-        $agentUser    = User::role('agent')->get();
+        // $agentUser    = User::role('agent')->get();
 
-        return view('team.edit', compact('team', 'categories', 'agentUser', 'departments'));
+        return view('team.edit', compact('team', 'categories'));
     }
 
     /**
      * Remove the specified resource from storage.
      * @param Team $team
      */
-    public function destroy(Team $team)
-    {
+    public function destroy(Team $team) {
         Gate::authorize('delete', Team::class);
         $team->delete();
         Artisan::call('optimize:clear');
