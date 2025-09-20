@@ -228,7 +228,7 @@
                         <th class="text-heading-dark">Requester</th>
                         <th class="text-heading-dark">Department</th>
                         <th class="text-heading-dark">Assigned Team</th>
-                        <th class="text-heading-dark">Assigned Agent</th>
+                        <th class="text-heading-dark">Assigned Employee</th>
                         <th class="text-heading-dark">Created</th>
                         <th class="text-heading-dark">Created By</th>
                         <th class="text-heading-dark">Age</th>
