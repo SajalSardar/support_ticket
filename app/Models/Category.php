@@ -24,6 +24,10 @@ class Category extends Model {
         static::updated(function () {
             Cache::forget("category_list");
         });
+
+        static::deleted(function () {
+            Cache::forget('category_list');
+        });
     }
 
     /**

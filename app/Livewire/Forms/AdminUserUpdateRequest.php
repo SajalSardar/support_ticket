@@ -7,12 +7,13 @@ use Illuminate\Validation\Rule;
 use Livewire\Form;
 
 class AdminUserUpdateRequest extends Form {
-    public $name, $email, $role_id, $ignore;
+    public $name, $email, $role_id, $ignore, $department_id;
 
     public function rules(): array {
-        $arr['form.name']    = ['required', 'min:3', 'max:20'];
-        $arr['form.email']   = ['required', 'email', 'max:40', Rule::unique(User::class, 'email')->ignore($this->ignore)];
-        $arr['form.role_id'] = ['required', 'int'];
+        $arr['form.name']          = ['required', 'min:3', 'max:20'];
+        $arr['form.email']         = ['required', 'email', 'max:40', Rule::unique(User::class, 'email')->ignore($this->ignore)];
+        $arr['form.role_id']       = ['required', 'int'];
+        $arr['form.department_id'] = ['required', 'int'];
         return $arr;
     }
 
@@ -20,9 +21,10 @@ class AdminUserUpdateRequest extends Form {
      * Define public function attributes()
      */
     public function attributes() {
-        $arr['form.name']    = 'Name';
-        $arr['form.email']   = 'Email';
-        $arr['form.role_id'] = 'Role';
+        $arr['form.name']          = 'Name';
+        $arr['form.email']         = 'Email';
+        $arr['form.role_id']       = 'Role';
+        $arr['form.department_id'] = 'Department';
         return $arr;
     }
 }

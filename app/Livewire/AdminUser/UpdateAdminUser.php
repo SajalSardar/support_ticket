@@ -3,6 +3,7 @@
 namespace App\Livewire\AdminUser;
 
 use App\Livewire\Forms\AdminUserUpdateRequest;
+use App\Models\Department;
 use App\Services\AdminUser\AdminUserService;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
@@ -18,6 +19,10 @@ class UpdateAdminUser extends Component {
      * Define public property $user;
      */
     public array | object $user;
+    /**
+     * Define public property $user;
+     */
+    public array | object $departments;
 
     /**
      * Define public form method AdminUserUpdateRequest $form;
@@ -29,10 +34,11 @@ class UpdateAdminUser extends Component {
      * @return void
      */
     public function mount(): void {
-        $this->form->ignore  = $this->user->id;
-        $this->form->name    = $this->user?->name;
-        $this->form->email   = $this->user?->email;
-        $this->form->role_id = $this->user->roles->first()->id;
+        $this->form->ignore        = $this->user->id;
+        $this->form->name          = $this->user?->name;
+        $this->form->email         = $this->user?->email;
+        $this->form->role_id       = $this->user->roles->first()->id;
+        $this->form->department_id = $this->user?->department_id;
     }
 
     /**
@@ -47,7 +53,8 @@ class UpdateAdminUser extends Component {
     }
 
     public function render() {
-        $this->roles = Role::query()->whereNotIn('id', [1])->get();
+        $this->roles       = Role::query()->whereNotIn('id', [1])->get();
+        $this->departments = Department::query()->get();
         return view('livewire.adminuser.update-adminuser');
     }
 }
